@@ -1,0 +1,244 @@
+body{
+    scroll-behavior: smooth;
+    padding: 0px;
+    margin: 0px;
+}
+
+.form_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    color: black;
+    /* background-image: url(../src/Assets/360_F_460710131_YkD6NsivdyYsHupNvO3Y8MPEwxTAhORh.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: rgb(253, 253, 253); */
+}
+
+.login_form {
+    width: 400px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 30px 0px;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 22px rgb(176, 169, 169);
+    backdrop-filter: blur(3px);
+    /* color: rgb(44, 36, 36); */
+    border: 3px solid white;
+}
+
+.login_form Form {
+    width: 100%;
+    max-width: 80%;
+}
+
+.signup_form {
+
+    width: 450px;
+    max-width: 90%;
+    height: 666px;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 2px 2px 22px rgb(176, 169, 169);
+    backdrop-filter: blur(3px);
+    /* color: rgb(43, 33, 33); */
+    border: 3px solid white;
+}
+
+.signup_form h2 {
+    text-align: center;
+
+}
+
+.signUpBtn {
+    background-color: cadetblue;
+
+}
+.loginBtn {
+    background-color: cadetblue;
+
+}
+.dashboard{
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgb(224, 224, 224); */
+}
+
+.productCard {
+    height: 360px !important;
+    width: 290px !important;
+    border: 1px solid chocolate;
+  
+  }
+
+.forgetLable{
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard_header{
+    top: 0;
+    right: 0;
+    /* margin-left: 250px !important; */
+    position: fixed;
+    width: 100%;
+    /* width: 85%; */
+
+}
+.sidebar{
+    height: 90vh;
+    border-right: 1px solid black;
+    width: 250px ;
+    position: fixed;
+    left: 0;
+    padding-top: 20px;
+  }
+  .side_nav{
+    /* margin: 20px; */
+    margin-left: 55px;
+    /* margin-top: 20px; */
+ }
+  .dashboard_content{
+    margin-left: 295px;
+    margin-right: 15px;
+    margin-top: 89px;
+
+  }
+
+  /* Style for the container */
+.Table_container {
+    padding: 20px;
+    background-color: #bab8b8;
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    /* max-width: 80%; */
+    margin: 20px auto;
+  }
+  img{
+    height: 60px;
+    width: 60px;
+  }
+  /* Style for the table */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: left;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table header styles */
+  .styled-table thead tr {
+    background-color: green;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Table body styles */
+  .styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #5dd23d;
+  }
+  
+  .styled-table tbody tr:hover {
+    background-color: #b4f8a5;
+  }
+  
+  /* Table cell padding */
+  .styled-table th, .styled-table td {
+    padding: 12px 15px;
+  }
+  
+  /* Responsive design for small screens */
+  @media (max-width: 768px) {
+    .table-container {
+      padding: 10px;
+    }
+  
+    .styled-table th, .styled-table td {
+      font-size: 14px;
+    }
+  }
+  
+ .navbar_max{
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    height: 70px;
+    /* border-bottom: 1px solid green; */
+ }
+ .navbar_container{
+    width: 100%;
+    box-shadow: 2px 3px 20px grey;
+ }
+ 
+ .side_nav button {
+    all: unset;
+    font-size: 20px;
+    font-weight: 700;
+
+ }
+ .side_nav button:hover{
+ color: blue;
+
+ }
+
+.create_post {
+    padding: 20px;
+    background-color: white;
+    margin-top: 120px;
+    box-shadow: 2px 2px 15px gray;
+    border-radius: 4px;
+    border-radius: 10px;
+    
+  }
+  
+  
+  .create_post form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .create_post input, .create_post textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .create_post button {
+    padding: 10px;
+    background: green;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .create_post button:hover {
+    box-shadow: 2px 3px 10px rgb(2, 2, 2);
+  }
