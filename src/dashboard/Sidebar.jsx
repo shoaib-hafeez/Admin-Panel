@@ -24,7 +24,7 @@ const Sidebar = ({ handleButtonClick }) => {
         <br />
         <br />
         <button onClick={() => handleButtonClick("viewPosts")}>
-          <FaEye /> View Post
+          <FaEye />  View Post
         </button> 
         <br /> 
         <br />

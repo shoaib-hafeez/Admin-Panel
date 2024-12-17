@@ -16,8 +16,6 @@ const ViewPosts = () => {
   const handleUpdatePost = ()=>{
        
     
-
-
   }
 
   const confirmDelete = () => {

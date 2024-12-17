@@ -1,5 +1,6 @@
  import React, { useState ,useRef} from "react";
 import axiosClient from "../lib/axios";
+// import { createPostApi } from "../services/post.service";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -30,9 +31,9 @@ const CreatePost = () => {
       formData.append("images", imageFile); // Append the file
     }
 
-    // Send request using axios
     axiosClient
       .post("/social-media/posts", formData, {
+        //  createPostApi( formData, {         createpost ki Api post.service m bana k yaha call ki h 
         headers: {
           "Content-Type": "multipart/form-data", // Set the proper content type
         },

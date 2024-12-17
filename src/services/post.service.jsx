@@ -1,15 +1,32 @@
 import axiosClient from "../lib/axios"
 
-export const  getAllPosts = ()=>{
-  
-    return  axiosClient 
-    .get("/posts")
-   
+export const getAllPostsApi = () => {
+
+    return axiosClient
+        .get("/social-media/posts")
+
+}
+
+// export const createPostApi =()=>{
+
+//     return axiosClient
+//        .post("/social-media/posts")
+
+
+// }
+
+export const deletePostApi = () => {
+
+    return axiosClient
+        .delete('/social-media/posts/')
+
 }
 
 
-export const  deletePost = ()=>{
+// export const updatePostApi = () => {
 
-}
+//     return
+
+// }
 
 

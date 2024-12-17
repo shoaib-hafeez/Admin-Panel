@@ -7,7 +7,7 @@ import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import useAuthStore from '../store/Auth-Store';
-import axiosClient from '../lib/axios';
+import { loginUserApi } from '../services/user.service';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -36,19 +36,15 @@ const Login = () => {
     const onSubmit = async (data) => {
         setIsSubmitting(true); // Disable the button
         try {
-            const response = await axiosClient.post('/users/login', data, {
-                headers: {
-                    accept: 'application/json',
-                    'content-type': 'application/json',
-                },
-            });
-
-            console.log('API Response:', response.data.data);
-
+            // Calling the loginUser service function
+            const response = await loginUserApi(data);
+    
+            console.log('API Response:', response.data);
+    
             // Save user data to Zustand store and localStorage
-            setUser(response.data.data);
-            localStorage.setItem('E-loginUser', JSON.stringify(response.data.data));
-
+            setUser(response.data);
+            localStorage.setItem('E-loginUser', JSON.stringify(response.data));
+    
             alert('Logged in successfully!');
             reset(); // Clear the form fields
             navigate('/Dashboard'); // Redirect to Dashboard

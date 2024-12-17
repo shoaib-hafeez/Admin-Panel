@@ -7,7 +7,7 @@ import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons for eye toggle
-import axiosClient from '../lib/axios';
+import { signUpUserApi } from '../services/user.service';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -16,7 +16,7 @@ const SignUp = () => {
 
     // Zod Schema for validation
     const userSchema = z.object({
-        userName: z.string().trim( ).min(3, 'Username must be at least 3 characters.').max(18, 'Username must not be more then 18 characters'),
+        userName: z.string().trim( ).min(3, 'Username must be at least 3 characters.').max(20, 'Username must not be more then 18 characters'),
         email: z.string().email('Invalid email address.').trim(),
         role: z.string().nonempty('Role is required.').trim(),
         password: z.string().min(8, 'Password must be at least 8 characters.').trim(),
@@ -31,22 +31,17 @@ const SignUp = () => {
     } = useForm({
         resolver: zodResolver(userSchema), // Integrate Zod schema
     });
-
     // Form submission handler
     const onSubmit = async (data) => {
         setIsSubmitting(true); // Disable button and show "Submitting..."
         try {
-            const response = await axiosClient.post('/users/register', data, {
-                headers: {
-                    accept: 'application/json',
-                    'content-type': 'application/json',
-                },
-            });
-
-            console.log('API Response:', response.data);
-
+            // Call the service function
+            const response = await signUpUserApi(data);
+    
+            console.log('API Response:', response);
+    
             // Store user data and navigate to login
-            localStorage.setItem('E-SignUpUser', JSON.stringify(response.data.data));
+            localStorage.setItem('E-SignUpUser', JSON.stringify(response.data));
             alert('Signup successful! Please login.');
             reset(); // Reset the form
             navigate('/Login');

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import axiosClient from "../lib/axios";
+
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import AppStore from "../store/App-Store";
-import { getAllPosts } from "../services/post.service";
+import { getAllPostsApi } from "../services/post.service";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const Dashboard = () => {
   // Fetch posts only when the location is `/Dashboard/ViewPost`
   useEffect(() => {
     if (location.pathname === "/Dashboard/Posts/ViewPost") {
-     getAllPosts()
+     getAllPostsApi()
         .then((response) => setPosts(response.data.data.posts))
         .catch((error) => console.error("Failed to fetch posts:", error));
     }

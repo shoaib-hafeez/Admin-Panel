@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-    // baseURL:'https://api.freeapi.app/api/v1'
-    baseURL:'https://dummyjson.com'
+    baseURL:'https://api.freeapi.app/api/v1'
+    // baseURL:'https://dummyjson.com'
     
 });
 axiosClient.interceptors.request.use(function (config) {
