@@ -9,7 +9,7 @@ const AppStore = create((set) => ({
   // Delete a post via API and update state
   deletePost: async (postId) => {
     try {
-      //yeh api post service m bni hoi h or yaha get ki gai h 
+      //yeh api post service m bni hoi h or yaha call ki h 
       await deletePostApi(`${postId}`)     //axiosClient.delete(`/social-media/posts/${postId}`);
       set((state) => ({
         posts: state.posts.filter((post) => post._id !== postId),

@@ -23,10 +23,8 @@ export const deletePostApi = () => {
 }
 
 
-// export const updatePostApi = () => {
-
-//     return
-
-// }
+export const getPostByIdApi = (id) => {
+    return axiosClient.get(`/social-media/posts/${id}`);
+  };
 
 

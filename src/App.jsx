@@ -8,6 +8,7 @@ import ForgetPassword from "./auth/Forget-Password";
 import ResetPassword from "./auth/Reset-Password";
 import ViewPosts from "./dashboard/View-Post";
 
+
 function App() {
   const router = createBrowserRouter([
     { path: "/", element: <SignUp /> },
@@ -20,8 +21,10 @@ function App() {
       children: [
         { path: "Post/CreatePost", element: <CreatePost /> },
         { path: "Posts/ViewPost", element: <ViewPosts /> },
+        { path: "/Dashboard/edit/:id", element:<CreatePost />},
       ],
     },
+  
   ]);
 
   return (

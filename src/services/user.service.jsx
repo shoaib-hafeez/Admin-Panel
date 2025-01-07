@@ -9,6 +9,7 @@ export const signUpUserApi = async (userData) => {
                 'content-type': 'application/json',
             },
         });
+
         return response.data; // Return the response data
     } catch (error) {
         throw error; // Throw error so it can be caught in the component
